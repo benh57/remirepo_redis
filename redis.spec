@@ -187,7 +187,7 @@ chmod 755 %{buildroot}%{_bindir}/%{name}-*
 install -pDm755 %{SOURCE7} %{buildroot}%{_libexecdir}/%{name}-shutdown
 
 # Install redis-trib
-install -pDm755 src/%{name}-trib.rb %{buildroot}/bin/%{name}-trib.rb
+install -pDm755 src/%{name}-trib.rb %{buildroot}/usr/bin/%{name}-trib.rb
 
 # Install man pages
 man=$(dirname %{buildroot}%{_mandir})
@@ -253,6 +253,7 @@ fi
 %dir %attr(0750, redis, redis) %{_localstatedir}/lib/%{name}
 %dir %attr(0750, redis, redis) %{_localstatedir}/log/%{name}
 %{_bindir}/%{name}-*
+%{_bindir}/%{name}-trib.rb
 %{_libexecdir}/%{name}-*
 %{_mandir}/man1/redis*
 %{_mandir}/man5/redis*
