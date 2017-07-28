@@ -47,7 +47,6 @@ Source6:          %{name}-sentinel.service
 Source7:          %{name}-shutdown
 Source8:          %{name}-limit-systemd
 Source9:          %{name}-limit-init
-Source10:         %{name}-trib.rb
 
 # Update configuration for Fedora
 Patch0:           0001-redis-3.2-redis-conf.patch
@@ -188,7 +187,7 @@ chmod 755 %{buildroot}%{_bindir}/%{name}-*
 install -pDm755 %{SOURCE7} %{buildroot}%{_libexecdir}/%{name}-shutdown
 
 # Install redis-trib
-install -pDm755 %{SOURCE10} %{buildroot}/bin/%{name}-trib.rb
+install -pDm755 src/${name}-trib.rb %{buildroot}/bin/%{name}-trib.rb
 
 # Install man pages
 man=$(dirname %{buildroot}%{_mandir})
