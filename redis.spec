@@ -187,7 +187,7 @@ chmod 755 %{buildroot}%{_bindir}/%{name}-*
 install -pDm755 %{SOURCE7} %{buildroot}%{_libexecdir}/%{name}-shutdown
 
 # Install redis-trib
-install -pDm755 src/${name}-trib.rb %{buildroot}/bin/%{name}-trib.rb
+install -pDm755 src/%{name}-trib.rb %{buildroot}/bin/%{name}-trib.rb
 
 # Install man pages
 man=$(dirname %{buildroot}%{_mandir})
